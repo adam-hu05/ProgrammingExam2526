@@ -22,7 +22,6 @@ public class SystemUI {
                 f.dispose();
             }
         });
-
     }
 }
 

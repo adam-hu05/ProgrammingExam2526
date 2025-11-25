@@ -5,8 +5,8 @@ import java.awt.*;
 public class Temp extends Sensor{
     private int wardID;
     private int idealTemp; //In degrees centigrade
-    public Temp(String name, int wardID, int idealTemp, Point p){
-        super(name, p);
+    public Temp(String name, int wardID, int idealTemp, Point p, EnvironmentalSystem eSys){
+        super(name, p, eSys);
         this.wardID = wardID;
         this.idealTemp = idealTemp;
     }
@@ -19,5 +19,6 @@ public class Temp extends Sensor{
     @Override
     public void draw(Graphics g){
         g.drawString(getName(), getP().x, getP().y);
+        g.drawString(geteSys().getTempFeed().getTemperature(wardID), getP().x, getP().y -10);
     }
 }
